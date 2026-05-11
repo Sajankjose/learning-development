@@ -368,87 +368,216 @@
 
     .pdf-export-holder {
       position: fixed;
-      left: -99999px;
-      top: 0;
+      left: 0;
+      top: -1200px;
       width: 1123px;
       height: 794px;
       background: #ffffff;
       overflow: hidden;
       z-index: -1;
+      pointer-events: none;
     }
 
-    .certificate.pdf-export {
+    .pdf-certificate {
       width: 1123px;
       height: 794px;
-      margin: 0 !important;
-      padding: 48px 64px !important;
-      border: 12px solid #E4F4F1;
-      border-radius: 0;
-      box-shadow: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      page-break-inside: avoid;
+      background: #ffffff;
+      border: 6px solid #07877B;
+      position: relative;
       overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      padding: 42px 58px;
     }
 
-    .certificate.pdf-export::before {
-      inset: 24px;
-      border-radius: 0;
+    .pdf-certificate::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 2px solid #BFE1DB;
+      pointer-events: none;
     }
 
-    .certificate.pdf-export .certificate-logo {
-      max-width: 145px;
-      max-height: 52px;
-      margin: 0 auto 18px;
+    .pdf-certificate::after {
+      content: "";
+      position: absolute;
+      left: -80px;
+      right: -80px;
+      bottom: -115px;
+      height: 280px;
+      background: radial-gradient(circle at center, rgba(7, 135, 123, 0.18), rgba(7, 135, 123, 0.05) 44%, transparent 70%);
+      pointer-events: none;
     }
 
-    .certificate.pdf-export .certificate-logo-fallback {
-      font-size: 32px;
-      margin: 0 auto 18px;
+    .pdf-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
     }
 
-    .certificate.pdf-export .certificate-small {
-      font-size: 12px;
-      margin-bottom: 6px;
+    .pdf-logo {
+      width: 240px;
+      height: auto;
+      object-fit: contain;
     }
 
-    .certificate.pdf-export .certificate-title {
-      font-size: 28px;
-      margin: 8px 0 12px;
+    .pdf-logo-fallback {
+      color: #07877B;
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -1px;
     }
 
-    .certificate.pdf-export .certificate-name {
-      font-size: 42px;
-      line-height: 1.1;
-      margin: 10px 0 12px;
-      max-width: 900px;
+    .pdf-dept {
+      font-size: 25px;
+      font-weight: 800;
+      color: #07877B;
+      margin-top: 12px;
+    }
+
+    .pdf-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .pdf-small-title {
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      color: #667085;
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .pdf-main-title {
+      font-size: 52px;
+      line-height: 1.05;
+      font-weight: 900;
+      margin: 0 0 18px;
+      color: #172033;
+      letter-spacing: -1.5px;
+    }
+
+    .pdf-divider {
+      width: 300px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #07877B, transparent);
+      margin: 0 auto 24px;
+      border-radius: 999px;
+    }
+
+    .pdf-presented {
+      font-size: 27px;
+      color: #475467;
+      margin: 0 0 18px;
+    }
+
+    .pdf-name {
+      font-size: 64px;
+      line-height: 1;
+      color: #07877B;
+      font-weight: 900;
+      margin: 0 0 22px;
+      letter-spacing: -1.5px;
       word-break: break-word;
     }
 
-    .certificate.pdf-export p {
-      max-width: 840px;
-      margin: 6px auto;
-      font-size: 17px;
-      line-height: 1.45;
+    .pdf-description {
+      max-width: 900px;
+      margin: 0 auto 28px;
+      font-size: 24px;
+      line-height: 1.4;
+      color: #344054;
     }
 
-    .certificate.pdf-export h2 {
-      margin: 18px 0 4px;
-      font-size: 28px;
+    .pdf-score-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 8px;
     }
 
-    .certificate.pdf-export .employee-code-line {
-      margin-top: 10px;
-      font-size: 16px;
+    .pdf-trophy {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: #E8F7F4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
     }
 
-    .certificate.pdf-export .certificate-footer {
-      width: 100%;
-      margin-top: 34px;
-      padding: 0 52px;
-      font-size: 14px;
+    .pdf-score {
+      font-size: 34px;
+      color: #07877B;
+      font-weight: 900;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    .pdf-emp {
+      font-size: 22px;
+      font-weight: 800;
+      color: #172033;
+      text-align: left;
+    }
+
+    .pdf-footer {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      bottom: 62px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      z-index: 2;
+      color: #172033;
+    }
+
+    .pdf-footer-main {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .pdf-footer-line {
+      width: 260px;
+      height: 2px;
+      background: #07877B;
+      margin-bottom: 10px;
+    }
+
+    .pdf-footer-label {
+      font-size: 18px;
+      color: #667085;
+    }
+
+    .pdf-seal {
+      position: absolute;
+      left: 50%;
+      bottom: 34px;
+      transform: translateX(-50%);
+      width: 126px;
+      height: 126px;
+      border-radius: 50%;
+      border: 4px double #07877B;
+      background: #ffffff;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #07877B;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.35;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
 
     @media (max-width: 700px) {
@@ -801,21 +930,72 @@
       return Promise.all(imagePromises);
     }
 
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
     function createPdfCertificateClone() {
-      const sourceCertificate = document.getElementById("certificate");
       const exportHolder = document.createElement("div");
-      const exportCertificate = sourceCertificate.cloneNode(true);
+      const safeParticipantName = escapeHtml(participantName || "Participant");
+      const safeEmployeeCode = escapeHtml(participantEmployeeCode || "-");
+      const safeDate = escapeHtml(getFormattedDate());
+      const safeScore = escapeHtml(`${score}/${questions.length}`);
 
       exportHolder.className = "pdf-export-holder";
-      exportCertificate.classList.add("pdf-export");
-      exportCertificate.id = "certificatePdfExport";
+      exportHolder.innerHTML = `
+        <div class="pdf-certificate" id="certificatePdfExport">
+          <div class="pdf-top-row">
+            <div>
+              <img class="pdf-logo" src="https://www.geojit.com/HomeDesign/images/logo.png" alt="Geojit Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+              <div class="pdf-logo-fallback" style="display:none;">GEOJIT</div>
+            </div>
+            <div class="pdf-dept">Learning &amp; Development</div>
+          </div>
 
-      exportHolder.appendChild(exportCertificate);
+          <div class="pdf-content">
+            <div class="pdf-small-title">Certificate of Completion</div>
+            <div class="pdf-main-title">Market Integrity Awareness Quiz</div>
+            <div class="pdf-divider"></div>
+            <div class="pdf-presented">This certificate is proudly presented to</div>
+            <div class="pdf-name">${safeParticipantName}</div>
+            <div class="pdf-description">
+              for successfully completing the awareness quiz on circular trading, pump and dump schemes, front running, insider trading, UPSI, and misuse of dormant accounts.
+            </div>
+            <div class="pdf-score-row">
+              <div class="pdf-trophy">🏆</div>
+              <div>
+                <div class="pdf-score">Score: ${safeScore}</div>
+                <div class="pdf-emp">Employee Code: ${safeEmployeeCode}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pdf-footer">
+            <div>
+              <div class="pdf-footer-main">${safeDate}</div>
+              <div class="pdf-footer-line"></div>
+              <div class="pdf-footer-label">Date of Completion</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="pdf-footer-main">Learning &amp; Development</div>
+              <div class="pdf-footer-line"></div>
+              <div class="pdf-footer-label">Geojit</div>
+            </div>
+          </div>
+
+          <div class="pdf-seal">Commitment to<br/>Ethics &amp;<br/>Integrity</div>
+        </div>
+      `;
+
       document.body.appendChild(exportHolder);
-
       return {
         holder: exportHolder,
-        certificate: exportCertificate
+        certificate: exportHolder.querySelector("#certificatePdfExport")
       };
     }
 
@@ -842,8 +1022,12 @@
             scale: 2,
             backgroundColor: "#ffffff",
             logging: false,
+            useCORS: true,
+            allowTaint: true,
             scrollX: 0,
             scrollY: 0,
+            width: 1123,
+            height: 794,
             windowWidth: 1123,
             windowHeight: 794
           },
@@ -958,6 +1142,8 @@
       console.assert(typeof copyToClipboard === "function", "Test failed: Clipboard fallback function should exist.");
       console.assert(typeof showLogoFallback === "function", "Test failed: Logo fallback function should exist.");
       console.assert(typeof createPdfCertificateClone === "function", "Test failed: PDF export clone function should exist.");
+      console.assert(typeof escapeHtml === "function", "Test failed: HTML escaping helper should exist.");
+      console.assert(escapeHtml("<Sajan>") === "&lt;Sajan&gt;", "Test failed: HTML escaping should work.");
       console.log("Market Integrity Quiz tests completed.");
     }
 
