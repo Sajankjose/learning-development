@@ -366,6 +366,91 @@
       font-weight: 700;
     }
 
+    .pdf-export-holder {
+      position: fixed;
+      left: -99999px;
+      top: 0;
+      width: 1123px;
+      height: 794px;
+      background: #ffffff;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .certificate.pdf-export {
+      width: 1123px;
+      height: 794px;
+      margin: 0 !important;
+      padding: 48px 64px !important;
+      border: 12px solid #E4F4F1;
+      border-radius: 0;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      page-break-inside: avoid;
+      overflow: hidden;
+    }
+
+    .certificate.pdf-export::before {
+      inset: 24px;
+      border-radius: 0;
+    }
+
+    .certificate.pdf-export .certificate-logo {
+      max-width: 145px;
+      max-height: 52px;
+      margin: 0 auto 18px;
+    }
+
+    .certificate.pdf-export .certificate-logo-fallback {
+      font-size: 32px;
+      margin: 0 auto 18px;
+    }
+
+    .certificate.pdf-export .certificate-small {
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .certificate.pdf-export .certificate-title {
+      font-size: 28px;
+      margin: 8px 0 12px;
+    }
+
+    .certificate.pdf-export .certificate-name {
+      font-size: 42px;
+      line-height: 1.1;
+      margin: 10px 0 12px;
+      max-width: 900px;
+      word-break: break-word;
+    }
+
+    .certificate.pdf-export p {
+      max-width: 840px;
+      margin: 6px auto;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .certificate.pdf-export h2 {
+      margin: 18px 0 4px;
+      font-size: 28px;
+    }
+
+    .certificate.pdf-export .employee-code-line {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .certificate.pdf-export .certificate-footer {
+      width: 100%;
+      margin-top: 34px;
+      padding: 0 52px;
+      font-size: 14px;
+    }
+
     @media (max-width: 700px) {
       .app { padding: 16px; }
       .card { padding: 24px; border-radius: 22px; }
@@ -716,8 +801,25 @@
       return Promise.all(imagePromises);
     }
 
+    function createPdfCertificateClone() {
+      const sourceCertificate = document.getElementById("certificate");
+      const exportHolder = document.createElement("div");
+      const exportCertificate = sourceCertificate.cloneNode(true);
+
+      exportHolder.className = "pdf-export-holder";
+      exportCertificate.classList.add("pdf-export");
+      exportCertificate.id = "certificatePdfExport";
+
+      exportHolder.appendChild(exportCertificate);
+      document.body.appendChild(exportHolder);
+
+      return {
+        holder: exportHolder,
+        certificate: exportCertificate
+      };
+    }
+
     async function downloadCertificate() {
-      const certificate = document.getElementById("certificate");
       const safeName = participantName.replace(/[^a-z0-9]/gi, "_").toLowerCase() || "participant";
 
       if (typeof html2pdf === "undefined") {
@@ -725,36 +827,45 @@
         return;
       }
 
+      let pdfClone = null;
+
       try {
         setPdfStatus("Preparing your PDF certificate...");
-        await waitForImagesToLoad(certificate);
+        pdfClone = createPdfCertificateClone();
+        await waitForImagesToLoad(pdfClone.certificate);
 
         const pdfOptions = {
-          margin: 0.35,
+          margin: 0,
           filename: `market-integrity-certificate-${safeName}.pdf`,
-          image: { type: "jpeg", quality: 0.98 },
+          image: { type: "jpeg", quality: 1 },
           html2canvas: {
             scale: 2,
-            useCORS: true,
-            allowTaint: false,
             backgroundColor: "#ffffff",
-            logging: false
+            logging: false,
+            scrollX: 0,
+            scrollY: 0,
+            windowWidth: 1123,
+            windowHeight: 794
           },
           jsPDF: {
-            unit: "in",
-            format: "a4",
+            unit: "px",
+            format: [1123, 794],
             orientation: "landscape"
           },
           pagebreak: {
-            mode: ["avoid-all", "css", "legacy"]
+            mode: ["avoid-all"]
           }
         };
 
-        await html2pdf().set(pdfOptions).from(certificate).save();
+        await html2pdf().set(pdfOptions).from(pdfClone.certificate).save();
         setPdfStatus("PDF certificate downloaded successfully.");
       } catch (error) {
         console.error("PDF download failed:", error);
-        setPdfStatus("PDF download could not be completed in this browser. Please try again in Chrome or Edge, or check whether external images are allowed.");
+        setPdfStatus("PDF download could not be completed in this browser. Please try again in Chrome or Edge.");
+      } finally {
+        if (pdfClone && pdfClone.holder && pdfClone.holder.parentNode) {
+          pdfClone.holder.parentNode.removeChild(pdfClone.holder);
+        }
       }
     }
 
@@ -846,6 +957,7 @@
       console.assert(typeof setPdfStatus === "function", "Test failed: PDF status function should exist.");
       console.assert(typeof copyToClipboard === "function", "Test failed: Clipboard fallback function should exist.");
       console.assert(typeof showLogoFallback === "function", "Test failed: Logo fallback function should exist.");
+      console.assert(typeof createPdfCertificateClone === "function", "Test failed: PDF export clone function should exist.");
       console.log("Market Integrity Quiz tests completed.");
     }
 
