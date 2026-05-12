@@ -19,7 +19,6 @@
     }
 
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -28,41 +27,11 @@
       min-height: 100vh;
     }
 
-    .app {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-
-    .brand-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      color: var(--deep-green);
-    }
-
-    .logo-image {
-      height: 38px;
-      width: auto;
-      display: block;
-      object-fit: contain;
-    }
-
-    .logo-fallback {
-      color: var(--geojit-green);
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-    }
+    .app { max-width: 920px; margin: 0 auto; padding: 24px; }
+    .brand { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+    .brand-title { display: flex; align-items: center; gap: 12px; font-weight: 700; color: var(--deep-green); }
+    .logo-image { height: 38px; width: auto; display: block; object-fit: contain; }
+    .logo-fallback { color: var(--geojit-green); font-size: 26px; font-weight: 900; letter-spacing: -0.5px; }
 
     .card {
       background: rgba(255, 255, 255, 0.92);
@@ -72,499 +41,150 @@
       padding: 34px;
     }
 
-    .hero {
-      min-height: 520px;
-      display: grid;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--light-green);
-      color: var(--deep-green);
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.05;
-      margin: 0 0 16px;
-      color: var(--deep-green);
-      letter-spacing: -1.2px;
-    }
-
-    h2 {
-      margin: 0 0 14px;
-      color: var(--deep-green);
-      font-size: 28px;
-    }
-
-    p {
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 16px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    input {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 15px 16px;
-      font-size: 15px;
-      outline: none;
-      background: #fff;
-    }
-
-    input:focus {
-      border-color: var(--geojit-green);
-      box-shadow: 0 0 0 4px rgba(7, 135, 123, 0.10);
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    button {
-      border: 0;
-      border-radius: 16px;
-      padding: 14px 20px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-    }
-
+    .hero { min-height: 520px; display: grid; align-items: center; }
+    .badge { display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 999px; background: var(--light-green); color: var(--deep-green); font-size: 13px; font-weight: 700; margin-bottom: 18px; }
+    h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.05; margin: 0 0 16px; color: var(--deep-green); letter-spacing: -1.2px; }
+    h2 { margin: 0 0 14px; color: var(--deep-green); font-size: 28px; }
+    p { color: var(--muted); line-height: 1.65; font-size: 16px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+    input { width: 100%; border: 1px solid var(--border); border-radius: 16px; padding: 15px 16px; font-size: 15px; outline: none; background: #fff; }
+    input:focus { border-color: var(--geojit-green); box-shadow: 0 0 0 4px rgba(7, 135, 123, 0.10); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    button { border: 0; border-radius: 16px; padding: 14px 20px; font-size: 15px; font-weight: 700; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
     button:hover { transform: translateY(-1px); }
     button:disabled { cursor: default; transform: none; }
-
-    .primary {
-      background: var(--geojit-green);
-      color: #fff;
-      box-shadow: 0 12px 24px rgba(7, 135, 123, 0.20);
-    }
-
-    .secondary {
-      background: var(--light-green);
-      color: var(--deep-green);
-    }
-
-    .ghost {
-      background: #fff;
-      color: var(--deep-green);
-      border: 1px solid var(--border);
-    }
-
+    .primary { background: var(--geojit-green); color: #fff; box-shadow: 0 12px 24px rgba(7, 135, 123, 0.20); }
+    .secondary { background: var(--light-green); color: var(--deep-green); }
+    .ghost { background: #fff; color: var(--deep-green); border: 1px solid var(--border); }
     .hidden { display: none !important; }
 
     .progress-wrap { margin: 12px 0 26px; }
+    .progress-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+    .progress-bar { height: 10px; background: #E6F1EF; border-radius: 999px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--geojit-green); width: 0; border-radius: 999px; transition: width .25s ease; }
+    .question { font-size: 24px; line-height: 1.35; font-weight: 800; color: var(--text); margin: 18px 0 22px; }
+    .options { display: grid; gap: 12px; }
+    .option { width: 100%; text-align: left; background: #fff; color: var(--text); border: 1px solid var(--border); border-radius: 18px; padding: 17px 18px; display: flex; gap: 12px; align-items: flex-start; font-weight: 600; box-shadow: none; }
+    .option span:first-child { width: 28px; height: 28px; flex: 0 0 28px; border-radius: 50%; display: grid; place-items: center; background: var(--light-green); color: var(--deep-green); font-size: 13px; font-weight: 800; }
+    .option.correct { border-color: var(--success); background: #ECFDF5; }
+    .option.wrong { border-color: var(--error); background: #FFF1F1; }
+    .feedback { margin-top: 18px; padding: 15px 16px; border-radius: 16px; background: var(--soft-bg); color: var(--deep-green); font-weight: 700; }
 
-    .progress-meta {
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
+    .score-circle { width: 150px; height: 150px; border-radius: 50%; background: var(--light-green); color: var(--deep-green); display: grid; place-items: center; margin: 22px auto; border: 8px solid #D5F0EA; font-size: 38px; font-weight: 900; }
+    .certificate { background: #fff; border: 10px solid #E4F4F1; border-radius: 24px; padding: 36px; text-align: center; margin-top: 26px; position: relative; }
+    .certificate::before { content: ""; position: absolute; inset: 12px; border: 1px solid #BFE1DB; border-radius: 14px; pointer-events: none; }
+    .certificate-logo { width: 160px; height: auto; margin: 0 auto 22px; display: block; object-fit: contain; }
+    .certificate-logo-fallback { color: var(--geojit-green); font-size: 34px; font-weight: 900; letter-spacing: -0.6px; margin: 0 auto 22px; }
+    .certificate-small { text-transform: uppercase; letter-spacing: 2px; font-size: 12px; color: var(--muted); font-weight: 800; }
+    .certificate-name { font-size: 36px; color: var(--deep-green); font-weight: 900; margin: 14px 0; }
+    .certificate-title { font-size: 24px; color: var(--text); font-weight: 800; margin: 12px 0; }
+    .employee-code-line { margin-top: 18px; color: var(--deep-green); font-weight: 700; font-size: 16px; }
+    .serial-number-line { margin-top: 10px; color: var(--muted); font-weight: 700; font-size: 14px; }
+    .certificate-footer { display: flex; justify-content: space-between; gap: 20px; margin-top: 34px; color: var(--muted); font-size: 13px; }
+    .share-box { width: 100%; min-height: 90px; border: 1px dashed var(--border); border-radius: 16px; background: var(--soft-bg); padding: 14px; color: var(--text); margin-top: 18px; font-size: 14px; line-height: 1.6; }
+    .status-message { margin-top: 14px; padding: 12px 14px; border-radius: 14px; background: var(--light-green); color: var(--deep-green); font-size: 14px; font-weight: 700; }
 
-    .progress-bar {
-      height: 10px;
-      background: #E6F1EF;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: var(--geojit-green);
-      width: 0;
-      border-radius: 999px;
-      transition: width .25s ease;
-    }
-
-    .question {
-      font-size: 24px;
-      line-height: 1.35;
-      font-weight: 800;
-      color: var(--text);
-      margin: 18px 0 22px;
-    }
-
-    .options {
-      display: grid;
-      gap: 12px;
-    }
-
-    .option {
-      width: 100%;
-      text-align: left;
-      background: #fff;
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 17px 18px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      font-weight: 600;
-      box-shadow: none;
-    }
-
-    .option span:first-child {
-      width: 28px;
-      height: 28px;
-      flex: 0 0 28px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--light-green);
-      color: var(--deep-green);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .option.correct {
-      border-color: var(--success);
-      background: #ECFDF5;
-    }
-
-    .option.wrong {
-      border-color: var(--error);
-      background: #FFF1F1;
-    }
-
-    .feedback {
-      margin-top: 18px;
-      padding: 15px 16px;
-      border-radius: 16px;
-      background: var(--soft-bg);
-      color: var(--deep-green);
-      font-weight: 700;
-    }
-
-    .score-circle {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: var(--light-green);
-      color: var(--deep-green);
-      display: grid;
-      place-items: center;
-      margin: 22px auto;
-      border: 8px solid #D5F0EA;
-      font-size: 38px;
-      font-weight: 900;
-    }
-
-    .certificate {
-      background: #fff;
-      border: 10px solid #E4F4F1;
-      border-radius: 24px;
-      padding: 36px;
-      text-align: center;
-      margin-top: 26px;
-      position: relative;
-    }
-
-    .certificate::before {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border: 1px solid #BFE1DB;
-      border-radius: 14px;
-      pointer-events: none;
-    }
-
-    .certificate-logo {
-      width: 160px;
-      height: auto;
-      margin: 0 auto 22px;
-      display: block;
-      object-fit: contain;
-    }
-
-    .certificate-logo-fallback {
-      color: var(--geojit-green);
-      font-size: 34px;
-      font-weight: 900;
-      letter-spacing: -0.6px;
-      margin: 0 auto 22px;
-    }
-
-    .certificate-small {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 800;
-    }
-
-    .certificate-name {
-      font-size: 36px;
-      color: var(--deep-green);
-      font-weight: 900;
-      margin: 14px 0;
-    }
-
-    .certificate-title {
-      font-size: 24px;
-      color: var(--text);
-      font-weight: 800;
-      margin: 12px 0;
-    }
-
-    .employee-code-line {
-      margin-top: 18px;
-      color: var(--deep-green);
-      font-weight: 700;
-      font-size: 16px;
-    }
-
-    .certificate-footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      margin-top: 34px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .share-box {
-      width: 100%;
-      min-height: 90px;
-      border: 1px dashed var(--border);
-      border-radius: 16px;
-      background: var(--soft-bg);
-      padding: 14px;
-      color: var(--text);
-      margin-top: 18px;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .status-message {
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: var(--light-green);
-      color: var(--deep-green);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .pdf-export-holder {
-      position: fixed;
-      left: 0;
-      top: -1200px;
-      width: 1123px;
-      height: 794px;
-      background: #ffffff;
-      overflow: hidden;
-      z-index: -1;
-      pointer-events: none;
-    }
-
+    .pdf-export-holder { position: fixed; left: 0; top: -1200px; width: 1123px; height: 794px; background: #ffffff; overflow: hidden; z-index: -1; pointer-events: none; }
     .pdf-certificate {
       width: 1123px;
       height: 794px;
-      background: #ffffff;
-      border: 6px solid #07877B;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfefe 100%);
+      border: 8px solid #0B8C81;
       position: relative;
       overflow: hidden;
       font-family: Arial, Helvetica, sans-serif;
       color: #172033;
-      padding: 42px 58px;
+      padding: 34px 42px;
+      box-sizing: border-box;
     }
-
     .pdf-certificate::before {
       content: "";
       position: absolute;
-      inset: 16px;
+      inset: 10px;
       border: 2px solid #BFE1DB;
       pointer-events: none;
+      border-radius: 12px;
     }
-
     .pdf-certificate::after {
       content: "";
       position: absolute;
-      left: -80px;
-      right: -80px;
-      bottom: -115px;
-      height: 280px;
-      background: radial-gradient(circle at center, rgba(7, 135, 123, 0.18), rgba(7, 135, 123, 0.05) 44%, transparent 70%);
+      left: -8%;
+      right: -8%;
+      bottom: -90px;
+      height: 260px;
+      background: radial-gradient(circle at center, rgba(7, 135, 123, 0.14), rgba(7, 135, 123, 0.03) 45%, transparent 72%);
       pointer-events: none;
     }
-
-    .pdf-top-row {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      position: relative;
-      z-index: 2;
-    }
-
-    .pdf-logo {
-      width: 240px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .pdf-logo-fallback {
-      color: #07877B;
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .pdf-dept {
-      font-size: 25px;
-      font-weight: 800;
-      color: #07877B;
-      margin-top: 12px;
-    }
-
+    .pdf-top-row { display: flex; align-items: flex-start; justify-content: space-between; position: relative; z-index: 2; }
+    .pdf-logo { width: 240px; height: auto; object-fit: contain; }
+    .pdf-logo-fallback { color: #07877B; font-size: 38px; font-weight: 900; letter-spacing: -1px; }
+    .pdf-dept { font-size: 25px; font-weight: 800; color: #07877B; margin-top: 12px; }
     .pdf-content {
       position: relative;
       z-index: 2;
       text-align: center;
-      margin-top: 18px;
+      margin-top: 8px;
+      padding: 0 20px;
     }
-
-    .pdf-small-title {
-      text-transform: uppercase;
-      letter-spacing: 8px;
-      color: #667085;
-      font-size: 18px;
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
-
+    .pdf-small-title { text-transform: uppercase; letter-spacing: 8px; color: #667085; font-size: 18px; font-weight: 900; margin-bottom: 20px; }
     .pdf-main-title {
-      font-size: 52px;
-      line-height: 1.05;
+      font-size: 60px;
+      line-height: 1.02;
       font-weight: 900;
-      margin: 0 0 18px;
+      margin: 0 0 14px;
       color: #172033;
-      letter-spacing: -1.5px;
+      letter-spacing: -2px;
     }
-
-    .pdf-divider {
-      width: 300px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, #07877B, transparent);
-      margin: 0 auto 24px;
-      border-radius: 999px;
-    }
-
-    .pdf-presented {
-      font-size: 27px;
-      color: #475467;
-      margin: 0 0 18px;
-    }
-
+    .pdf-divider { width: 300px; height: 3px; background: linear-gradient(90deg, transparent, #07877B, transparent); margin: 0 auto 24px; border-radius: 999px; }
+    .pdf-presented { font-size: 27px; color: #475467; margin: 0 0 18px; }
     .pdf-name {
-      font-size: 64px;
+      font-size: 68px;
       line-height: 1;
-      color: #07877B;
+      color: #0B8C81;
       font-weight: 900;
-      margin: 0 0 22px;
-      letter-spacing: -1.5px;
+      margin: 0 0 18px;
+      letter-spacing: -1.8px;
       word-break: break-word;
     }
-
     .pdf-description {
       max-width: 900px;
-      margin: 0 auto 28px;
-      font-size: 24px;
-      line-height: 1.4;
+      margin: 0 auto 22px;
+      font-size: 22px;
+      line-height: 1.45;
       color: #344054;
     }
-
     .pdf-score-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 22px;
-      margin-top: 8px;
+      gap: 18px;
+      margin-top: 14px;
     }
-
-    .pdf-trophy {
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      background: #E8F7F4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 38px;
-    }
-
-    .pdf-score {
-      font-size: 34px;
-      color: #07877B;
-      font-weight: 900;
-      margin-bottom: 8px;
-      text-align: left;
-    }
-
-    .pdf-emp {
-      font-size: 22px;
-      font-weight: 800;
-      color: #172033;
-      text-align: left;
-    }
-
+    .pdf-trophy { width: 76px; height: 76px; border-radius: 50%; background: #E8F7F4; display: flex; align-items: center; justify-content: center; font-size: 38px; }
+    .pdf-score { font-size: 34px; color: #07877B; font-weight: 900; margin-bottom: 8px; text-align: left; }
+    .pdf-emp { font-size: 22px; font-weight: 800; color: #172033; text-align: left; }
+    .pdf-serial { font-size: 18px; font-weight: 800; color: #667085; text-align: left; margin-top: 6px; }
     .pdf-footer {
       position: absolute;
-      left: 80px;
-      right: 80px;
-      bottom: 62px;
+      left: 70px;
+      right: 70px;
+      bottom: 76px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       z-index: 2;
       color: #172033;
     }
-
-    .pdf-footer-main {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .pdf-footer-line {
-      width: 260px;
-      height: 2px;
-      background: #07877B;
-      margin-bottom: 10px;
-    }
-
-    .pdf-footer-label {
-      font-size: 18px;
-      color: #667085;
-    }
-
+    .pdf-footer-main { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .pdf-footer-line { width: 260px; height: 2px; background: #07877B; margin-bottom: 10px; }
+    .pdf-footer-label { font-size: 18px; color: #667085; }
     .pdf-seal {
       position: absolute;
       left: 50%;
-      bottom: 34px;
+      bottom: 22px;
       transform: translateX(-50%);
-      width: 126px;
-      height: 126px;
+      width: 118px;
+      height: 118px;
       border-radius: 50%;
       border: 4px double #07877B;
       background: #ffffff;
@@ -574,7 +194,7 @@
       justify-content: center;
       text-align: center;
       color: #07877B;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
       line-height: 1.35;
       box-shadow: 0 8px 20px rgba(0,0,0,0.12);
@@ -595,7 +215,7 @@
   <main class="app">
     <header class="brand">
       <div class="brand-title">
-        <img class="logo-image" src="https://www.geojit.com/HomeDesign/images/logo.png" alt="Geojit Logo" onerror="showLogoFallback(this)" />
+        <img id="pageLogo" class="logo-image" src="https://www.geojit.com/HomeDesign/images/logo.png" alt="Geojit Logo" />
         <div class="logo-fallback hidden">Geojit</div>
         <div>Market Integrity Quiz</div>
       </div>
@@ -606,35 +226,25 @@
       <div>
         <div class="badge">10-question learning experience</div>
         <h1>Test your awareness on market misconduct</h1>
-        <p>
-          A simple quiz to understand circular trading, pump and dump schemes, front running, insider trading, UPSI, and misuse of dormant accounts.
-        </p>
+        <p>A simple quiz to understand circular trading, pump and dump schemes, front running, insider trading, UPSI, and misuse of dormant accounts.</p>
         <div class="form-grid">
           <input id="userName" type="text" placeholder="Enter your name" />
           <input id="employeeCode" type="text" placeholder="Enter Employee Code" />
         </div>
-        <div class="btn-row">
-          <button class="primary" type="button" onclick="startQuiz()">Start Quiz</button>
-        </div>
+        <div class="btn-row"><button id="startQuizBtn" class="primary" type="button">Start Quiz</button></div>
       </div>
     </section>
 
     <section id="quizPage" class="card hidden">
       <div class="progress-wrap">
-        <div class="progress-meta">
-          <span id="questionCount">Question 1 of 10</span>
-          <span id="scoreText">Score: 0</span>
-        </div>
+        <div class="progress-meta"><span id="questionCount">Question 1 of 10</span><span id="scoreText">Score: 0</span></div>
         <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
       </div>
-
       <div class="badge" id="topicBadge">Market Integrity</div>
       <div id="questionText" class="question"></div>
       <div id="options" class="options"></div>
       <div id="feedback" class="feedback hidden"></div>
-      <div class="btn-row">
-        <button id="nextBtn" class="primary hidden" type="button" onclick="nextQuestion()">Next Question</button>
-      </div>
+      <div class="btn-row"><button id="nextBtn" class="primary hidden" type="button">Next Question</button></div>
     </section>
 
     <section id="resultPage" class="card hidden">
@@ -646,21 +256,17 @@
       </div>
 
       <div id="certificate" class="certificate">
-        <img class="certificate-logo" src="https://www.geojit.com/HomeDesign/images/logo.png" alt="Geojit Logo" onerror="showLogoFallback(this)" />
+        <img id="certificateLogo" class="certificate-logo" src="https://www.geojit.com/HomeDesign/images/logo.png" alt="Geojit Logo" />
         <div class="certificate-logo-fallback hidden">Geojit</div>
         <div class="certificate-small">Certificate of Completion</div>
         <div class="certificate-title">Market Integrity Awareness Quiz</div>
         <p>This certificate is proudly presented to</p>
         <div id="certificateName" class="certificate-name">Participant</div>
-        <p>
-          for successfully completing the awareness quiz on circular trading, pump and dump schemes, front running, insider trading, UPSI, and misuse of dormant accounts.
-        </p>
+        <p>for successfully completing the awareness quiz on circular trading, pump and dump schemes, front running, insider trading, UPSI, and misuse of dormant accounts.</p>
         <h2 id="certificateScore">Score: 0/10</h2>
         <div class="employee-code-line">Employee Code: <span id="certificateEmployeeCode">-</span></div>
-        <div class="certificate-footer">
-          <div>Date: <span id="certificateDate"></span></div>
-          <div>Learning &amp; Development</div>
-        </div>
+        <div class="serial-number-line">Certificate No: <span id="certificateSerialNumber">-</span></div>
+        <div class="certificate-footer"><div>Date: <span id="certificateDate"></span></div><div>Learning &amp; Development</div></div>
       </div>
 
       <div class="share-box" id="shareText"></div>
@@ -668,486 +274,440 @@
       <div id="pdfStatus" class="status-message hidden"></div>
 
       <div class="btn-row">
-        <button class="primary" type="button" onclick="downloadCertificate()">Download PDF Certificate</button>
-        <button class="secondary" type="button" onclick="shareResult()">Share Result</button>
-        <button class="ghost" type="button" onclick="copyShareText()">Copy Share Text</button>
-        <button class="ghost" type="button" onclick="restartQuiz()">Restart Quiz</button>
+        <button id="downloadPdfBtn" class="primary" type="button">Download PDF Certificate</button>
+        <button id="shareResultBtn" class="secondary" type="button">Share Result</button>
+        <button id="copyShareBtn" class="ghost" type="button">Copy Share Text</button>
+        <button id="restartQuizBtn" class="ghost" type="button">Restart Quiz</button>
       </div>
     </section>
   </main>
 
   <script>
-    const questions = [
-      {
-        topic: "Circular Trading",
-        q: "What is the primary intention behind circular trading?",
-        options: ["Long-term wealth creation", "Creating artificial liquidity and misleading market participants", "Reducing transaction costs", "Improving price discovery"],
-        answer: 1
-      },
-      {
-        topic: "Circular Trading",
-        q: "Circular trading typically involves:",
-        options: ["High-frequency algorithmic trading", "Genuine buyer-seller interaction", "Pre-arranged trades among related entities", "Foreign institutional investors"],
-        answer: 2
-      },
-      {
-        topic: "Pump and Dump",
-        q: "In a pump and dump scheme, ‘pump’ refers to:",
-        options: ["Selling shares rapidly", "Spreading positive rumors to inflate price", "Reducing stock liquidity", "Short selling activity"],
-        answer: 1
-      },
-      {
-        topic: "Pump and Dump",
-        q: "Who usually suffers in a pump and dump scheme?",
-        options: ["Promoters", "Institutional investors", "Late entrants who buy at inflated prices", "Stock exchanges"],
-        answer: 2
-      },
-      {
-        topic: "Front Running",
-        q: "Front running occurs when:",
-        options: ["A trader executes orders faster", "A broker trades based on advance knowledge of client orders", "A client cancels an order", "A stock hits upper circuit"],
-        answer: 1
-      },
-      {
-        topic: "Front Running",
-        q: "Why is front running considered unethical?",
-        options: ["It increases brokerage income", "It delays execution", "It misuses confidential client information for personal gain", "It reduces market liquidity"],
-        answer: 2
-      },
-      {
-        topic: "Insider Trading",
-        q: "Insider trading involves:",
-        options: ["Trading using publicly available information", "Long-term investing", "Trading based on unpublished price-sensitive information (UPSI)", "Day trading strategies"],
-        answer: 2
-      },
-      {
-        topic: "UPSI",
-        q: "Which of the following qualifies as UPSI?",
-        options: ["Daily market news", "Annual report published publicly", "Merger/acquisition information not yet announced", "Stock price charts"],
-        answer: 2
-      },
-      {
-        topic: "Insider Trading",
-        q: "Insider trading is prohibited because it:",
-        options: ["Limits trading volume", "Gives unfair advantage to certain investors", "Reduces liquidity", "Increases volatility"],
-        answer: 1
-      },
-      {
-        topic: "Dormant Accounts",
-        q: "Misuse of dormant accounts typically involves:",
-        options: ["Inactive accounts being reactivated legitimately", "Unauthorized trades without client knowledge", "Low-value transactions", "Closing inactive accounts"],
-        answer: 1
-      }
-    ];
+    (function () {
+      "use strict";
 
-    let currentQuestion = 0;
-    let score = 0;
-    let selected = false;
-    let participantName = "Participant";
-    let participantEmployeeCode = "";
+      const LOGO_URL = "https://www.geojit.com/HomeDesign/images/logo.png";
 
-    function startQuiz() {
-      const nameInput = document.getElementById("userName");
-      const employeeCodeInput = document.getElementById("employeeCode");
+      const questions = [
+        { topic: "Circular Trading", q: "What is the primary intention behind circular trading?", options: ["Long-term wealth creation", "Creating artificial liquidity and misleading market participants", "Reducing transaction costs", "Improving price discovery"], answer: 1 },
+        { topic: "Circular Trading", q: "Circular trading typically involves:", options: ["High-frequency algorithmic trading", "Genuine buyer-seller interaction", "Pre-arranged trades among related entities", "Foreign institutional investors"], answer: 2 },
+        { topic: "Pump and Dump", q: "In a pump and dump scheme, ‘pump’ refers to:", options: ["Selling shares rapidly", "Spreading positive rumors to inflate price", "Reducing stock liquidity", "Short selling activity"], answer: 1 },
+        { topic: "Pump and Dump", q: "Who usually suffers in a pump and dump scheme?", options: ["Promoters", "Institutional investors", "Late entrants who buy at inflated prices", "Stock exchanges"], answer: 2 },
+        { topic: "Front Running", q: "Front running occurs when:", options: ["A trader executes orders faster", "A broker trades based on advance knowledge of client orders", "A client cancels an order", "A stock hits upper circuit"], answer: 1 },
+        { topic: "Front Running", q: "Why is front running considered unethical?", options: ["It increases brokerage income", "It delays execution", "It misuses confidential client information for personal gain", "It reduces market liquidity"], answer: 2 },
+        { topic: "Insider Trading", q: "Insider trading involves:", options: ["Trading using publicly available information", "Long-term investing", "Trading based on unpublished price-sensitive information (UPSI)", "Day trading strategies"], answer: 2 },
+        { topic: "UPSI", q: "Which of the following qualifies as UPSI?", options: ["Daily market news", "Annual report published publicly", "Merger/acquisition information not yet announced", "Stock price charts"], answer: 2 },
+        { topic: "Insider Trading", q: "Insider trading is prohibited because it:", options: ["Limits trading volume", "Gives unfair advantage to certain investors", "Reduces liquidity", "Increases volatility"], answer: 1 },
+        { topic: "Dormant Accounts", q: "Misuse of dormant accounts typically involves:", options: ["Inactive accounts being reactivated legitimately", "Unauthorized trades without client knowledge", "Low-value transactions", "Closing inactive accounts"], answer: 1 }
+      ];
 
-      participantName = nameInput.value.trim() || "Participant";
-      participantEmployeeCode = employeeCodeInput.value.trim();
-      currentQuestion = 0;
-      score = 0;
-      selected = false;
-
-      hideElement("entryPage");
-      hideElement("resultPage");
-      showElement("quizPage");
-      showQuestion();
-    }
-
-    function showQuestion() {
-      selected = false;
-      const item = questions[currentQuestion];
-      const progressPercent = (currentQuestion / questions.length) * 100;
-
-      document.getElementById("questionCount").textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
-      document.getElementById("scoreText").textContent = `Score: ${score}`;
-      document.getElementById("progressFill").style.width = `${progressPercent}%`;
-      document.getElementById("topicBadge").textContent = item.topic;
-      document.getElementById("questionText").textContent = item.q;
-      hideElement("feedback");
-      hideElement("nextBtn");
-
-      const optionsContainer = document.getElementById("options");
-      optionsContainer.innerHTML = "";
-
-      item.options.forEach(function(option, index) {
-        const optionButton = document.createElement("button");
-        optionButton.className = "option";
-        optionButton.type = "button";
-        optionButton.innerHTML = `<span>${String.fromCharCode(65 + index)}</span><span>${option}</span>`;
-        optionButton.addEventListener("click", function() {
-          selectAnswer(index, optionButton);
-        });
-        optionsContainer.appendChild(optionButton);
-      });
-    }
-
-    function selectAnswer(index, button) {
-      if (selected) return;
-
-      selected = true;
-      const item = questions[currentQuestion];
-      const optionButtons = document.querySelectorAll(".option");
-      const feedback = document.getElementById("feedback");
-
-      optionButtons.forEach(function(optionButton, optionIndex) {
-        optionButton.disabled = true;
-        if (optionIndex === item.answer) {
-          optionButton.classList.add("correct");
-        }
-      });
-
-      if (index === item.answer) {
-        score += 1;
-        feedback.textContent = "Correct. Good understanding.";
-      } else {
-        button.classList.add("wrong");
-        feedback.textContent = `Not quite. Correct answer: ${String.fromCharCode(65 + item.answer)}. ${item.options[item.answer]}`;
-      }
-
-      document.getElementById("scoreText").textContent = `Score: ${score}`;
-      showElement("feedback");
-      showElement("nextBtn");
-    }
-
-    function nextQuestion() {
-      currentQuestion += 1;
-      if (currentQuestion < questions.length) {
-        showQuestion();
-        return;
-      }
-      showResult();
-    }
-
-    function getResultMessage(percentage) {
-      if (percentage >= 80) {
-        return "Excellent awareness. You clearly understand key market integrity concepts.";
-      }
-      if (percentage >= 60) {
-        return "Good attempt. A quick revision will make your understanding stronger.";
-      }
-      return "Good start. Please revisit the concepts and try again.";
-    }
-
-    function buildShareCopy(name, earnedScore, totalQuestions) {
-      return `${name} completed the Market Integrity Awareness Quiz and scored ${earnedScore}/${totalQuestions}. This quiz helped explain circular trading, pump and dump schemes, front running, insider trading, UPSI, and misuse of dormant accounts.`;
-    }
-
-    function showResult() {
-      hideElement("quizPage");
-      showElement("resultPage");
-
-      const percentage = Math.round((score / questions.length) * 100);
-      const message = getResultMessage(percentage);
-
-      document.getElementById("resultHeading").textContent = `Congratulations, ${participantName}!`;
-      document.getElementById("resultMessage").textContent = message;
-      document.getElementById("finalScore").textContent = `${score}/${questions.length}`;
-      document.getElementById("certificateName").textContent = participantName;
-      document.getElementById("certificateScore").textContent = `Score: ${score}/${questions.length}`;
-      document.getElementById("certificateEmployeeCode").textContent = participantEmployeeCode || "-";
-      document.getElementById("certificateDate").textContent = getFormattedDate();
-      document.getElementById("shareText").textContent = buildShareCopy(participantName, score, questions.length);
-
-      setShareStatus("");
-      setPdfStatus("");
-    }
-
-    function getFormattedDate() {
-      return new Date().toLocaleDateString("en-IN", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric"
-      });
-    }
-
-    function setPdfStatus(message) {
-      setStatusMessage("pdfStatus", message);
-    }
-
-    function setShareStatus(message) {
-      setStatusMessage("shareStatus", message);
-    }
-
-    function setStatusMessage(elementId, message) {
-      const statusElement = document.getElementById(elementId);
-      if (!statusElement) return;
-
-      if (!message) {
-        statusElement.textContent = "";
-        statusElement.classList.add("hidden");
-        return;
-      }
-
-      statusElement.textContent = message;
-      statusElement.classList.remove("hidden");
-    }
-
-    function hideElement(elementId) {
-      const element = document.getElementById(elementId);
-      if (element) {
-        element.classList.add("hidden");
-      }
-    }
-
-    function showElement(elementId) {
-      const element = document.getElementById(elementId);
-      if (element) {
-        element.classList.remove("hidden");
-      }
-    }
-
-    function showLogoFallback(imageElement) {
-      imageElement.classList.add("hidden");
-
-      const fallbackElement = imageElement.nextElementSibling;
-      if (fallbackElement) {
-        fallbackElement.classList.remove("hidden");
-      }
-    }
-
-    function waitForImagesToLoad(container) {
-      const images = Array.from(container.querySelectorAll("img"));
-      const imagePromises = images.map(function(img) {
-        if (img.complete && img.naturalWidth > 0) {
-          return Promise.resolve();
-        }
-
-        return new Promise(function(resolve) {
-          img.onload = function() { resolve(); };
-          img.onerror = function() { resolve(); };
-        });
-      });
-
-      return Promise.all(imagePromises);
-    }
-
-    function escapeHtml(value) {
-      return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
-
-    function createPdfCertificateClone() {
-      const exportHolder = document.createElement("div");
-      const safeParticipantName = escapeHtml(participantName || "Participant");
-      const safeEmployeeCode = escapeHtml(participantEmployeeCode || "-");
-      const safeDate = escapeHtml(getFormattedDate());
-      const safeScore = escapeHtml(`${score}/${questions.length}`);
-
-      exportHolder.className = "pdf-export-holder";
-      exportHolder.innerHTML = `
-        <div class="pdf-certificate" id="certificatePdfExport">
-          <div class="pdf-top-row">
-            <div>
-              <img class="pdf-logo" src="https://www.geojit.com/HomeDesign/images/logo.png" alt="Geojit Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-              <div class="pdf-logo-fallback" style="display:none;">GEOJIT</div>
-            </div>
-            <div class="pdf-dept">Learning &amp; Development</div>
-          </div>
-
-          <div class="pdf-content">
-            <div class="pdf-small-title">Certificate of Completion</div>
-            <div class="pdf-main-title">Market Integrity Awareness Quiz</div>
-            <div class="pdf-divider"></div>
-            <div class="pdf-presented">This certificate is proudly presented to</div>
-            <div class="pdf-name">${safeParticipantName}</div>
-            <div class="pdf-description">
-              for successfully completing the awareness quiz on circular trading, pump and dump schemes, front running, insider trading, UPSI, and misuse of dormant accounts.
-            </div>
-            <div class="pdf-score-row">
-              <div class="pdf-trophy">🏆</div>
-              <div>
-                <div class="pdf-score">Score: ${safeScore}</div>
-                <div class="pdf-emp">Employee Code: ${safeEmployeeCode}</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pdf-footer">
-            <div>
-              <div class="pdf-footer-main">${safeDate}</div>
-              <div class="pdf-footer-line"></div>
-              <div class="pdf-footer-label">Date of Completion</div>
-            </div>
-            <div style="text-align:right;">
-              <div class="pdf-footer-main">Learning &amp; Development</div>
-              <div class="pdf-footer-line"></div>
-              <div class="pdf-footer-label">Geojit</div>
-            </div>
-          </div>
-
-          <div class="pdf-seal">Commitment to<br/>Ethics &amp;<br/>Integrity</div>
-        </div>
-      `;
-
-      document.body.appendChild(exportHolder);
-      return {
-        holder: exportHolder,
-        certificate: exportHolder.querySelector("#certificatePdfExport")
-      };
-    }
-
-    async function downloadCertificate() {
-      const safeName = participantName.replace(/[^a-z0-9]/gi, "_").toLowerCase() || "participant";
-
-      if (typeof html2pdf === "undefined") {
-        setPdfStatus("PDF library could not be loaded. Please check the internet connection and try again.");
-        return;
-      }
-
-      let pdfClone = null;
-
-      try {
-        setPdfStatus("Preparing your PDF certificate...");
-        pdfClone = createPdfCertificateClone();
-        await waitForImagesToLoad(pdfClone.certificate);
-
-        const pdfOptions = {
-          margin: 0,
-          filename: `market-integrity-certificate-${safeName}.pdf`,
-          image: { type: "jpeg", quality: 1 },
-          html2canvas: {
-            scale: 2,
-            backgroundColor: "#ffffff",
-            logging: false,
-            useCORS: true,
-            allowTaint: true,
-            scrollX: 0,
-            scrollY: 0,
-            width: 1123,
-            height: 794,
-            windowWidth: 1123,
-            windowHeight: 794
-          },
-          jsPDF: {
-            unit: "px",
-            format: [1123, 794],
-            orientation: "landscape"
-          },
-          pagebreak: {
-            mode: ["avoid-all"]
-          }
-        };
-
-        await html2pdf().set(pdfOptions).from(pdfClone.certificate).save();
-        setPdfStatus("PDF certificate downloaded successfully.");
-      } catch (error) {
-        console.error("PDF download failed:", error);
-        setPdfStatus("PDF download could not be completed in this browser. Please try again in Chrome or Edge.");
-      } finally {
-        if (pdfClone && pdfClone.holder && pdfClone.holder.parentNode) {
-          pdfClone.holder.parentNode.removeChild(pdfClone.holder);
-        }
-      }
-    }
-
-    async function copyToClipboard(text) {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-        return true;
-      }
-
-      const textarea = document.createElement("textarea");
-      textarea.value = text;
-      textarea.setAttribute("readonly", "");
-      textarea.style.position = "fixed";
-      textarea.style.left = "-9999px";
-      document.body.appendChild(textarea);
-      textarea.select();
-
-      let copied = false;
-      try {
-        copied = document.execCommand("copy");
-      } finally {
-        document.body.removeChild(textarea);
-      }
-
-      return copied;
-    }
-
-    async function copyShareText() {
-      const text = document.getElementById("shareText").textContent;
-
-      try {
-        const copied = await copyToClipboard(text);
-        if (copied) {
-          setShareStatus("Share text copied. You can paste it on WhatsApp, email, or any social channel.");
-        } else {
-          setShareStatus("Unable to copy automatically. Please select and copy the share text manually.");
-        }
-      } catch (error) {
-        setShareStatus("Unable to copy automatically. Please select and copy the share text manually.");
-      }
-    }
-
-    async function shareResult() {
-      const text = document.getElementById("shareText").textContent;
-      const shareData = {
-        title: "Market Integrity Awareness Quiz",
-        text: text
+      const state = {
+        currentQuestion: 0,
+        score: 0,
+        selected: false,
+        participantName: "Participant",
+        employeeCode: "",
+        serialNumber: ""
       };
 
-      try {
-        if (navigator.share && (!navigator.canShare || navigator.canShare(shareData))) {
-          await navigator.share(shareData);
-          setShareStatus("Share option opened successfully.");
+      function getElement(id) {
+        return document.getElementById(id);
+      }
+
+      function hideElement(id) {
+        const element = getElement(id);
+        if (element) element.classList.add("hidden");
+      }
+
+      function showElement(id) {
+        const element = getElement(id);
+        if (element) element.classList.remove("hidden");
+      }
+
+      function showLogoFallback(imageElement) {
+        if (!imageElement) return;
+        imageElement.classList.add("hidden");
+        const fallback = imageElement.nextElementSibling;
+        if (fallback) fallback.classList.remove("hidden");
+      }
+
+      function getCertificateDateCode() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const day = String(now.getDate()).padStart(2, "0");
+        return `${year}${month}${day}`;
+      }
+
+      function generateCertificateSerialNumber(employeeCode) {
+        const cleaned = String(employeeCode || "NA").trim().replace(/[^a-zA-Z0-9]/g, "").toUpperCase() || "NA";
+        return `MIQ-${getCertificateDateCode()}-${cleaned}`;
+      }
+
+      function getFormattedDate() {
+        return new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+      }
+
+      function getResultMessage(percentage) {
+        if (percentage >= 80) return "Excellent awareness. You clearly understand key market integrity concepts.";
+        if (percentage >= 60) return "Good attempt. A quick revision will make your understanding stronger.";
+        return "Good start. Please revisit the concepts and try again.";
+      }
+
+      function buildShareCopy(name, earnedScore, totalQuestions) {
+        const serial = state.serialNumber || generateCertificateSerialNumber(state.employeeCode);
+        return `${name} completed the Market Integrity Awareness Quiz and scored ${earnedScore}/${totalQuestions}. Certificate No: ${serial}.`;
+      }
+
+      function setStatusMessage(id, message) {
+        const element = getElement(id);
+        if (!element) return;
+        if (!message) {
+          element.textContent = "";
+          element.classList.add("hidden");
           return;
         }
-      } catch (error) {
-        console.warn("Native sharing failed. Falling back to copy.", error);
+        element.textContent = message;
+        element.classList.remove("hidden");
       }
 
-      await copyShareText();
-    }
+      function setPdfStatus(message) {
+        setStatusMessage("pdfStatus", message);
+      }
 
-    function restartQuiz() {
-      hideElement("resultPage");
-      hideElement("quizPage");
-      showElement("entryPage");
+      function setShareStatus(message) {
+        setStatusMessage("shareStatus", message);
+      }
 
-      document.getElementById("userName").value = "";
-      document.getElementById("employeeCode").value = "";
-      currentQuestion = 0;
-      score = 0;
-      selected = false;
-      participantName = "Participant";
-      participantEmployeeCode = "";
-      setShareStatus("");
-      setPdfStatus("");
-    }
+      function startQuiz() {
+        const nameInput = getElement("userName");
+        const employeeCodeInput = getElement("employeeCode");
 
-    function runTests() {
-      console.assert(questions.length === 10, "Test failed: Quiz should have 10 questions.");
-      console.assert(questions.every(function(q) { return q.options.length === 4; }), "Test failed: Every question should have 4 options.");
-      console.assert(questions.every(function(q) { return Number.isInteger(q.answer) && q.answer >= 0 && q.answer < q.options.length; }), "Test failed: Every answer index should be valid.");
-      console.assert(getResultMessage(80).startsWith("Excellent"), "Test failed: 80% should show excellent message.");
-      console.assert(getResultMessage(60).startsWith("Good attempt"), "Test failed: 60% should show good attempt message.");
-      console.assert(getResultMessage(50).startsWith("Good start"), "Test failed: Below 60% should show good start message.");
-      console.assert(buildShareCopy("Sajan", 8, 10).includes("Sajan") && buildShareCopy("Sajan", 8, 10).includes("8/10"), "Test failed: Share copy should include name and score.");
-      console.assert(typeof downloadCertificate === "function", "Test failed: PDF download function should exist.");
-      console.assert(typeof waitForImagesToLoad === "function", "Test failed: Image loading helper should exist for PDF generation.");
-      console.assert(typeof setPdfStatus === "function", "Test failed: PDF status function should exist.");
-      console.assert(typeof copyToClipboard === "function", "Test failed: Clipboard fallback function should exist.");
-      console.assert(typeof showLogoFallback === "function", "Test failed: Logo fallback function should exist.");
-      console.assert(typeof createPdfCertificateClone === "function", "Test failed: PDF export clone function should exist.");
-      console.assert(typeof escapeHtml === "function", "Test failed: HTML escaping helper should exist.");
-      console.assert(escapeHtml("<Sajan>") === "&lt;Sajan&gt;", "Test failed: HTML escaping should work.");
-      console.log("Market Integrity Quiz tests completed.");
-    }
+        state.participantName = nameInput.value.trim() || "Participant";
+        state.employeeCode = employeeCodeInput.value.trim();
+        state.serialNumber = generateCertificateSerialNumber(state.employeeCode);
+        state.currentQuestion = 0;
+        state.score = 0;
+        state.selected = false;
 
-    runTests();
+        hideElement("entryPage");
+        hideElement("resultPage");
+        showElement("quizPage");
+        showQuestion();
+      }
+
+      function showQuestion() {
+        state.selected = false;
+        const item = questions[state.currentQuestion];
+        const progressPercent = (state.currentQuestion / questions.length) * 100;
+
+        getElement("questionCount").textContent = `Question ${state.currentQuestion + 1} of ${questions.length}`;
+        getElement("scoreText").textContent = `Score: ${state.score}`;
+        getElement("progressFill").style.width = `${progressPercent}%`;
+        getElement("topicBadge").textContent = item.topic;
+        getElement("questionText").textContent = item.q;
+        hideElement("feedback");
+        hideElement("nextBtn");
+
+        const optionsContainer = getElement("options");
+        optionsContainer.innerHTML = "";
+
+        item.options.forEach(function (option, index) {
+          const button = document.createElement("button");
+          button.className = "option";
+          button.type = "button";
+          button.innerHTML = `<span>${String.fromCharCode(65 + index)}</span><span>${option}</span>`;
+          button.addEventListener("click", function () {
+            selectAnswer(index, button);
+          });
+          optionsContainer.appendChild(button);
+        });
+      }
+
+      function selectAnswer(index, selectedButton) {
+        if (state.selected) return;
+        state.selected = true;
+
+        const item = questions[state.currentQuestion];
+        const optionButtons = document.querySelectorAll(".option");
+        const feedback = getElement("feedback");
+
+        optionButtons.forEach(function (button, optionIndex) {
+          button.disabled = true;
+          if (optionIndex === item.answer) button.classList.add("correct");
+        });
+
+        if (index === item.answer) {
+          state.score += 1;
+          feedback.textContent = "Correct. Good understanding.";
+        } else {
+          selectedButton.classList.add("wrong");
+          feedback.textContent = `Not quite. Correct answer: ${String.fromCharCode(65 + item.answer)}. ${item.options[item.answer]}`;
+        }
+
+        getElement("scoreText").textContent = `Score: ${state.score}`;
+        showElement("feedback");
+        showElement("nextBtn");
+      }
+
+      function nextQuestion() {
+        state.currentQuestion += 1;
+        if (state.currentQuestion < questions.length) {
+          showQuestion();
+          return;
+        }
+        showResult();
+      }
+
+      function showResult() {
+        hideElement("quizPage");
+        showElement("resultPage");
+
+        if (!state.serialNumber) state.serialNumber = generateCertificateSerialNumber(state.employeeCode);
+
+        const percentage = Math.round((state.score / questions.length) * 100);
+        const message = getResultMessage(percentage);
+
+        getElement("resultHeading").textContent = `Congratulations, ${state.participantName}!`;
+        getElement("resultMessage").textContent = message;
+        getElement("finalScore").textContent = `${state.score}/${questions.length}`;
+        getElement("certificateName").textContent = state.participantName;
+        getElement("certificateScore").textContent = `Score: ${state.score}/${questions.length}`;
+        getElement("certificateEmployeeCode").textContent = state.employeeCode || "-";
+        getElement("certificateSerialNumber").textContent = state.serialNumber || "-";
+        getElement("certificateDate").textContent = getFormattedDate();
+        getElement("shareText").textContent = buildShareCopy(state.participantName, state.score, questions.length);
+
+        setShareStatus("");
+        setPdfStatus("");
+      }
+
+      function waitForImagesToLoad(container) {
+        const images = Array.from(container.querySelectorAll("img"));
+        return Promise.all(images.map(function (img) {
+          if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+          return new Promise(function (resolve) {
+            img.onload = function () { resolve(); };
+            img.onerror = function () { resolve(); };
+          });
+        }));
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function createPdfCertificateClone() {
+        const exportHolder = document.createElement("div");
+        const safeName = escapeHtml(state.participantName || "Participant");
+        const safeEmployeeCode = escapeHtml(state.employeeCode || "-");
+        const safeDate = escapeHtml(getFormattedDate());
+        const safeScore = escapeHtml(`${state.score}/${questions.length}`);
+        const safeSerial = escapeHtml(state.serialNumber || generateCertificateSerialNumber(state.employeeCode));
+
+        exportHolder.className = "pdf-export-holder";
+        exportHolder.innerHTML = `
+          <div class="pdf-certificate" id="certificatePdfExport">
+            <div class="pdf-top-row">
+              <div>
+                <img class="pdf-logo" src="${LOGO_URL}" alt="Geojit Logo" />
+                <div class="pdf-logo-fallback" style="display:none;">GEOJIT</div>
+              </div>
+              <div class="pdf-dept">Learning &amp; Development</div>
+            </div>
+            <div class="pdf-content">
+              <div class="pdf-small-title">Certificate of Completion</div>
+              <div class="pdf-main-title">Market Integrity Awareness Quiz</div>
+              <div class="pdf-divider"></div>
+              <div class="pdf-presented">This certificate is proudly presented to</div>
+              <div class="pdf-name">${safeName}</div>
+              <div style="width:340px;height:2px;background:linear-gradient(90deg, transparent, #0B8C81, transparent);margin:0 auto 22px;"></div>
+              <div class="pdf-description">for successfully completing the awareness quiz on circular trading, pump and dump schemes, front running, insider trading, UPSI, and misuse of dormant accounts.</div>
+              <div class="pdf-score-row">
+                <div class="pdf-trophy">🏆</div>
+                <div>
+                  <div class="pdf-score">Score: ${safeScore}</div>
+                  <div class="pdf-emp">Employee Code: ${safeEmployeeCode}</div>
+                  <div class="pdf-serial">Certificate No: ${safeSerial}</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="position:absolute;left:0;right:0;bottom:0;height:260px;opacity:0.18;pointer-events:none;overflow:hidden;">
+              <svg viewBox="0 0 1200 260" preserveAspectRatio="none" style="width:100%;height:100%;">
+                <path d="M0,180 C220,40 420,260 640,160 C840,70 980,220 1200,80" stroke="#0B8C81" stroke-width="2" fill="none"/>
+                <path d="M0,195 C260,70 430,280 680,175 C890,90 1010,240 1200,110" stroke="#0B8C81" stroke-width="1.4" fill="none" opacity="0.7"/>
+                <path d="M0,210 C260,90 460,300 700,190 C900,110 1030,250 1200,130" stroke="#0B8C81" stroke-width="1" fill="none" opacity="0.5"/>
+              </svg>
+            </div>
+
+            <div class="pdf-footer">
+              <div><div class="pdf-footer-main">${safeDate}</div><div class="pdf-footer-line"></div><div class="pdf-footer-label">Date of Completion</div></div>
+              <div style="text-align:right;">
+                <div style="font-family:cursive;font-size:54px;color:#111;margin-bottom:6px;line-height:1;">Sajan</div><div class="pdf-footer-main">Learning &amp; Development</div><div class="pdf-footer-line"></div><div class="pdf-footer-label">Geojit</div></div>
+            </div>
+            <div class="pdf-seal">Commitment to<br/>Ethics &amp;<br/>Integrity</div>
+          </div>
+        `;
+
+        const logo = exportHolder.querySelector(".pdf-logo");
+        if (logo) logo.addEventListener("error", function () { showLogoFallback(logo); });
+
+        document.body.appendChild(exportHolder);
+        return { holder: exportHolder, certificate: exportHolder.querySelector("#certificatePdfExport") };
+      }
+
+      async function downloadCertificate() {
+        const safeFileName = state.participantName.replace(/[^a-z0-9]/gi, "_").toLowerCase() || "participant";
+        if (typeof window.html2pdf === "undefined") {
+          setPdfStatus("PDF library could not be loaded. Please check the internet connection and try again.");
+          return;
+        }
+
+        let pdfClone = null;
+        try {
+          setPdfStatus("Preparing your PDF certificate...");
+          pdfClone = createPdfCertificateClone();
+          await waitForImagesToLoad(pdfClone.certificate);
+
+          const pdfOptions = {
+            margin: 0,
+            filename: `market-integrity-certificate-${safeFileName}.pdf`,
+            image: { type: "jpeg", quality: 1 },
+            html2canvas: {
+              scale: 2,
+              backgroundColor: "#ffffff",
+              logging: false,
+              useCORS: true,
+              allowTaint: true,
+              scrollX: 0,
+              scrollY: 0,
+              width: 1123,
+              height: 794,
+              windowWidth: 1123,
+              windowHeight: 794
+            },
+            jsPDF: { unit: "px", format: [1123, 794], orientation: "landscape" },
+            pagebreak: { mode: ["avoid-all"] }
+          };
+
+          await window.html2pdf().set(pdfOptions).from(pdfClone.certificate).save();
+          setPdfStatus("PDF certificate downloaded successfully.");
+        } catch (error) {
+          console.error("PDF download failed:", error);
+          setPdfStatus("PDF download could not be completed in this browser. Please try again in Chrome or Edge.");
+        } finally {
+          if (pdfClone && pdfClone.holder && pdfClone.holder.parentNode) {
+            pdfClone.holder.parentNode.removeChild(pdfClone.holder);
+          }
+        }
+      }
+
+      async function copyToClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.select();
+        let copied = false;
+        try { copied = document.execCommand("copy"); } finally { document.body.removeChild(textarea); }
+        return copied;
+      }
+
+      async function copyShareText() {
+        const text = getElement("shareText").textContent;
+        try {
+          const copied = await copyToClipboard(text);
+          setShareStatus(copied ? "Share text copied. You can paste it on WhatsApp, email, or any social channel." : "Unable to copy automatically. Please select and copy the share text manually.");
+        } catch (error) {
+          setShareStatus("Unable to copy automatically. Please select and copy the share text manually.");
+        }
+      }
+
+      async function shareResult() {
+        const text = getElement("shareText").textContent;
+        const shareData = { title: "Market Integrity Awareness Quiz", text: text };
+        try {
+          if (navigator.share && (!navigator.canShare || navigator.canShare(shareData))) {
+            await navigator.share(shareData);
+            setShareStatus("Share option opened successfully.");
+            return;
+          }
+        } catch (error) {
+          console.warn("Native sharing failed. Falling back to copy.", error);
+        }
+        await copyShareText();
+      }
+
+      function restartQuiz() {
+        hideElement("resultPage");
+        hideElement("quizPage");
+        showElement("entryPage");
+        getElement("userName").value = "";
+        getElement("employeeCode").value = "";
+        state.currentQuestion = 0;
+        state.score = 0;
+        state.selected = false;
+        state.participantName = "Participant";
+        state.employeeCode = "";
+        state.serialNumber = "";
+        setShareStatus("");
+        setPdfStatus("");
+      }
+
+      function bindEvents() {
+        getElement("startQuizBtn").addEventListener("click", startQuiz);
+        getElement("nextBtn").addEventListener("click", nextQuestion);
+        getElement("downloadPdfBtn").addEventListener("click", downloadCertificate);
+        getElement("shareResultBtn").addEventListener("click", shareResult);
+        getElement("copyShareBtn").addEventListener("click", copyShareText);
+        getElement("restartQuizBtn").addEventListener("click", restartQuiz);
+
+        const pageLogo = getElement("pageLogo");
+        const certificateLogo = getElement("certificateLogo");
+        if (pageLogo) pageLogo.addEventListener("error", function () { showLogoFallback(pageLogo); });
+        if (certificateLogo) certificateLogo.addEventListener("error", function () { showLogoFallback(certificateLogo); });
+      }
+
+      function runTests() {
+        console.assert(questions.length === 10, "Test failed: Quiz should have 10 questions.");
+        console.assert(questions.every(function(q) { return q.options.length === 4; }), "Test failed: Every question should have 4 options.");
+        console.assert(questions.every(function(q) { return Number.isInteger(q.answer) && q.answer >= 0 && q.answer < q.options.length; }), "Test failed: Every answer index should be valid.");
+        console.assert(getResultMessage(80).startsWith("Excellent"), "Test failed: 80% should show excellent message.");
+        console.assert(getResultMessage(60).startsWith("Good attempt"), "Test failed: 60% should show good attempt message.");
+        console.assert(getResultMessage(50).startsWith("Good start"), "Test failed: Below 60% should show good start message.");
+        console.assert(buildShareCopy("Sajan", 8, 10).includes("Sajan") && buildShareCopy("Sajan", 8, 10).includes("8/10"), "Test failed: Share copy should include name and score.");
+        console.assert(typeof downloadCertificate === "function", "Test failed: PDF download function should exist.");
+        console.assert(typeof waitForImagesToLoad === "function", "Test failed: Image loading helper should exist for PDF generation.");
+        console.assert(typeof setPdfStatus === "function", "Test failed: PDF status function should exist.");
+        console.assert(typeof copyToClipboard === "function", "Test failed: Clipboard fallback function should exist.");
+        console.assert(typeof showLogoFallback === "function", "Test failed: Logo fallback function should exist.");
+        console.assert(typeof createPdfCertificateClone === "function", "Test failed: PDF export clone function should exist.");
+        console.assert(typeof escapeHtml === "function", "Test failed: HTML escaping helper should exist.");
+        console.assert(escapeHtml("<Sajan>") === "&lt;Sajan&gt;", "Test failed: HTML escaping should work.");
+        console.assert(generateCertificateSerialNumber("05815").includes("05815"), "Test failed: Serial number should include employee code.");
+        console.assert(generateCertificateSerialNumber("05815").startsWith("MIQ-"), "Test failed: Serial number should start with MIQ prefix.");
+        console.assert(typeof startQuiz === "function", "Test failed: startQuiz should be defined inside app scope.");
+        console.assert(getElement("startQuizBtn") !== null, "Test failed: Start quiz button should exist.");
+        console.log("Market Integrity Quiz tests completed.");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        bindEvents();
+        runTests();
+      });
+    })();
   </script>
 </body>
 </html>
