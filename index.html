@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Market Integrity Awareness Quiz</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     :root {
       --geojit-green: #07877B;
@@ -564,43 +565,53 @@
 
       async function downloadCertificate() {
         const safeFileName = state.participantName.replace(/[^a-z0-9]/gi, "_").toLowerCase() || "participant";
-        if (typeof window.html2pdf === "undefined") {
-          setPdfStatus("PDF library could not be loaded. Please check the internet connection and try again.");
+
+        if (typeof window.html2canvas === "undefined" || typeof window.jspdf === "undefined") {
+          setPdfStatus("PDF libraries could not be loaded. Please refresh and try again.");
           return;
         }
 
         let pdfClone = null;
+
         try {
-          setPdfStatus("Preparing your PDF certificate...");
+          setPdfStatus("Preparing your certificate...");
+
           pdfClone = createPdfCertificateClone();
           await waitForImagesToLoad(pdfClone.certificate);
 
-          const pdfOptions = {
-            margin: 0,
-            filename: `market-integrity-certificate-${safeFileName}.pdf`,
-            image: { type: "jpeg", quality: 1 },
-            html2canvas: {
-              scale: 2,
-              backgroundColor: "#ffffff",
-              logging: false,
-              useCORS: true,
-              allowTaint: true,
-              scrollX: 0,
-              scrollY: 0,
-              width: 1123,
-              height: 794,
-              windowWidth: 1123,
-              windowHeight: 794
-            },
-            jsPDF: { unit: "px", format: [1123, 794], orientation: "landscape" },
-            pagebreak: { mode: ["avoid-all"] }
-          };
+          const canvas = await window.html2canvas(pdfClone.certificate, {
+            scale: 3,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: "#ffffff",
+            logging: false,
+            width: 1123,
+            height: 794,
+            scrollX: 0,
+            scrollY: 0,
+            windowWidth: 1123,
+            windowHeight: 794
+          });
 
-          await window.html2pdf().set(pdfOptions).from(pdfClone.certificate).save();
+          const imageData = canvas.toDataURL("image/jpeg", 1.0);
+
+          const { jsPDF } = window.jspdf;
+
+          const pdf = new jsPDF({
+            orientation: "landscape",
+            unit: "px",
+            format: [1123, 794],
+            compress: true
+          });
+
+          pdf.addImage(imageData, "JPEG", 0, 0, 1123, 794);
+          pdf.save(`market-integrity-certificate-${safeFileName}.pdf`);
+
           setPdfStatus("PDF certificate downloaded successfully.");
+
         } catch (error) {
-          console.error("PDF download failed:", error);
-          setPdfStatus("PDF download could not be completed in this browser. Please try again in Chrome or Edge.");
+          console.error("PDF generation failed:", error);
+          setPdfStatus("Certificate export failed. Please try again in Chrome or Edge.");
         } finally {
           if (pdfClone && pdfClone.holder && pdfClone.holder.parentNode) {
             pdfClone.holder.parentNode.removeChild(pdfClone.holder);
@@ -689,6 +700,7 @@
         console.assert(getResultMessage(50).startsWith("Good start"), "Test failed: Below 60% should show good start message.");
         console.assert(buildShareCopy("Sajan", 8, 10).includes("Sajan") && buildShareCopy("Sajan", 8, 10).includes("8/10"), "Test failed: Share copy should include name and score.");
         console.assert(typeof downloadCertificate === "function", "Test failed: PDF download function should exist.");
+        console.assert(typeof window.html2canvas !== "undefined", "Test failed: html2canvas library should load.");
         console.assert(typeof waitForImagesToLoad === "function", "Test failed: Image loading helper should exist for PDF generation.");
         console.assert(typeof setPdfStatus === "function", "Test failed: PDF status function should exist.");
         console.assert(typeof copyToClipboard === "function", "Test failed: Clipboard fallback function should exist.");
