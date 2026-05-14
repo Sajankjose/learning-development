@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Market Integrity Awareness Quiz</title>
+  <title>Market Integrity Awareness Assessment</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
@@ -222,7 +222,7 @@
         <img id="certificateLogo" class="certificate-logo" src="https://www.geojit.com/HomeDesign/images/logo.png" alt="Geojit Logo" />
         <div class="certificate-logo-fallback hidden">Geojit</div>
         <div class="certificate-small">Certificate of Completion</div>
-        <div class="certificate-title">Market Integrity Awareness Quiz</div>
+        <div class="certificate-title">Market Integrity Awareness Assessment</div>
         <p>This certificate is proudly presented to</p>
         <div id="certificateName" class="certificate-name">Participant</div>
         <p>for successfully completing the awareness quiz on circular trading, pump and dump schemes, front running, insider trading, UPSI, and misuse of dormant accounts.</p>
@@ -319,7 +319,7 @@
 
       function buildShareCopy(name, earnedScore, totalQuestions) {
         const serial = state.serialNumber || generateCertificateSerialNumber(state.employeeCode);
-        return `${name} completed the Market Integrity Awareness Quiz and scored ${earnedScore}/${totalQuestions}. Certificate No: ${serial}.`;
+        return `${name} completed the Market Integrity Awareness Assessment and scored ${earnedScore}/${totalQuestions}. Certificate No: ${serial}.`;
       }
 
       function setStatusMessage(id, message) {
@@ -496,7 +496,7 @@
 
             <div class="pdf-content">
               <div class="pdf-small-title">Certificate of Completion</div>
-              <div class="pdf-main-title">Market Integrity Awareness Quiz</div>
+              <div class="pdf-main-title">Market Integrity Awareness Assessment</div>
               <div class="pdf-presented">This certificate is proudly presented to</div>
               <div class="pdf-name">${safeName}</div>
               <div class="pdf-description">for successfully completing the awareness quiz on circular trading, pump and dump schemes,<br/>front running, insider trading, UPSI, and misuse of dormant accounts.</div>
@@ -605,7 +605,7 @@
 
       async function shareResult() {
         const text = getElement("shareText").textContent;
-        const shareData = { title: "Market Integrity Awareness Quiz", text: text };
+        const shareData = { title: "Market Integrity Awareness Assessment", text: text };
         try {
           if (navigator.share && (!navigator.canShare || navigator.canShare(shareData))) {
             await navigator.share(shareData);
